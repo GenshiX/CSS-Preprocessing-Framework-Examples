@@ -16,6 +16,13 @@ $colors: (  rgba(255, 105, 180, 0.6),
 
 @mixin random-circle($i) {
     // Set size and animation
+            background-color: nth($list: $colors, $n: random(length($colors)));
+            border-radius: 100px;
+            $random-radius: random($max-radius)px;
+            width: 10vh;
+            length: ;
+            @include $random-position()
+            
 }
 
 #random-circles {
@@ -25,7 +32,11 @@ $colors: (  rgba(255, 105, 180, 0.6),
     overflow: hidden;
 
     // Style every circle
-}
+            @For $i from 1 through $number-of-circles:
+                        .circle-#($i);(
+                        @include random-circle($i);
+                        )
+                                    }
 
 @keyframes expand-fade {
     0% {
